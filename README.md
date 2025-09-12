@@ -46,9 +46,10 @@ O repositório possui:
 
 Para rodar localmente:
 
-1. Clone o repositório:
+1. Clone o repositório: Clone o repositório:  
+   ```bash
+   git clone https://github.com/dansimoes2025/lab_injection.git
    
-   ```bash   git clone https://github.com/dansimoes2025/lab_injection.git
    
 2. Coloque os arquivos em um servidor local que suporte PHP (por exemplo, XAMPP, WAMP, LAMP, ou usando php -S).
 
