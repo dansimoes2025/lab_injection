@@ -61,7 +61,7 @@ Crie uma tabela de usuários com colunas como id, username, password
 
 Ajuste em conexao.php os dados de conexão (host, usuário, senha, nome do banco)
 
-Uso
+#Uso
 
 Acesse index.php no navegador.
 
@@ -71,7 +71,7 @@ Observe o comportamento das versões insegura vs segura.
 
 Teste casos de injeção de SQL (por exemplo inserindo ' OR '1'='1 em campos de entrada) e veja qual versão evita o problema.
 
-Segurança
+#Segurança
 
 A versão segura (login_seguro.php) inclui:
 
@@ -89,7 +89,7 @@ Proteja contra XSS, CSRF, etc., se ampliar o projeto.
 
 Use conexões seguras (HTTPS) em ambientes de produção.
 
-Contribuição
+#Contribuição
 
 Contribuições são bem-vindas! Algumas ideias:
 
@@ -101,7 +101,7 @@ Demonstrar outras vulnerabilidades relacionadas
 
 Melhorar documentação
 
-Para contribuir:
+#Para contribuir:
 
 Fork este repositório
 
@@ -111,7 +111,7 @@ Faça seus ajustes / adições
 
 Envie pull request
 
-Licença
+#Licença
 
 Este projeto está licenciado sob a MIT License
  — sinta-se à vontade para estudar, usar e adaptar.
