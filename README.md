@@ -1,38 +1,52 @@
-# Lab Injection – Mitigação de SQL Injection com OWASP
+# Lab Vulnerável - SQL Injection e Controle de Acesso
 
-Repositório oficial do laboratório experimental desenvolvido para análise e mitigação de vulnerabilidades baseadas no OWASP Top 10 (2021).
+Projeto acadêmico desenvolvido para demonstração prática de vulnerabilidades da OWASP Top 10 2021.
 
-O projeto implementa duas versões da aplicação:
+## Objetivo
 
-- 📂 /vulneravel → versão intencionalmente insegura
-- 📂 /seguro → versão corrigida com boas práticas
+Demonstrar:
+- SQL Injection (A03 – Injection)
+- Broken Access Control (A01)
+- Armazenamento inseguro de credenciais (A02)
 
----
-
-## 🎯 Objetivo
-
-Demonstrar, de forma prática e comparativa, a mitigação de:
-
-- SQL Injection (A03:2021 – Injection)
-- Cross-Site Scripting (XSS)
-- Broken Access Control (A01:2021)
-- Cryptographic Failures (A02:2021)
+E suas respectivas mitigações utilizando:
+- PDO
+- Prepared Statements
+- Controle de Sessão
 
 ---
 
-⚙️ Ambiente Experimental
+## Estrutura
 
-- PHP 8.1+
-- MySQL 8.0+
-- Apache (XAMPP)
-- Visual Studio Code
-- OWASP ZAP 2.14+
+- /vulneravel → versão intencionalmente insegura
+- /seguro → versão mitigada
 
 ---
 
-🛠 Instalação
+## Requisitos
 
-### 1️⃣ Clonar o repositório
+- PHP 8+
+- MySQL
+- Apache (XAMPP recomendado)
+- MySQL Workbench
 
-```bash
-git clone https://github.com/SEU-USUARIO/lab_injection.git
+---
+
+## Instalação
+
+1. Importar arquivo `database/lab_injection.sql`
+2. Copiar pasta para `htdocs`
+3. Acessar:
+
+Versão vulnerável:
+http://localhost/lab_vulneravel/vulneravel/login.php
+
+Versão segura:
+http://localhost/lab_vulneravel/seguro/login.php
+
+---
+
+## Credenciais
+
+admin@lab.com
+123456
