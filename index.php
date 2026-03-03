@@ -1,12 +1,26 @@
-<h2>Login para Testes</h2>
-<form method="POST" action="login_inseguro.php">
-    <input type="text" name="usuario" placeholder="Usuário"><br>
-    <input type="text" name="senha" placeholder="Senha"><br>
-    <input type="submit" value="Testar Inseguro">
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Lab Injection</title>
+</head>
+<body>
+
+<h2>🔴 Login Vulnerável</h2>
+<form method="POST" action="vulneravel/login.php">
+    Email: <input type="text" name="email" required><br><br>
+    Senha: <input type="text" name="senha" required><br><br>
+    <button type="submit">Entrar (Vulnerável)</button>
 </form>
 
-<form method="POST" action="login_seguro.php">
-    <input type="text" name="usuario" placeholder="Usuário"><br>
-    <input type="text" name="senha" placeholder="Senha"><br>
-    <input type="submit" value="Testar Seguro">
+<hr>
+
+<h2>🟢 Login Seguro</h2>
+<form method="POST" action="seguro/login.php">
+    Email: <input type="text" name="email" required><br><br>
+    Senha: <input type="password" name="senha" required><br><br>
+    <button type="submit">Entrar (Seguro)</button>
 </form>
+
+</body>
+</html>
