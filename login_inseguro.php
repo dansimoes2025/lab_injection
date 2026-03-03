@@ -1,17 +1,20 @@
 <?php
-include 'conexao.php';
+session_start();
+include("../config/conexao.php");
 
-$usuario = $_POST['usuario'];
+$email = $_POST['email'];
 $senha = $_POST['senha'];
 
-$query = "SELECT * FROM usuarios WHERE usuario = '$usuario' AND senha = '$senha'";
-echo "<pre>Consulta gerada: $query</pre>"; // Para estudo
+$sql = "SELECT * FROM usuarios 
+        WHERE email = '$email' 
+        AND senha = '$senha'";
 
-$result = mysqli_query($conn, $query);
+$result = mysqli_query($conn, $sql);
 
-if (mysqli_fetch_array($result)) {
-    echo "<p style='color:green'>Logado com sucesso!</p>";
+if (mysqli_num_rows($result) > 0) {
+    $_SESSION['usuario'] = $email;
+    header("Location: ../dashboard.php");
 } else {
-    echo "<p style='color:red'>Usuário ou senha inválidos.</p>";
+    echo "Login inválido";
 }
 ?>
