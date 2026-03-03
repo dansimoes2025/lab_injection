@@ -1,6 +1,12 @@
 <?php
-$conn = mysqli_connect("localhost", "root", "", "lab_injection");
-if (!$conn) {
-    die("Erro na conexão: " . mysqli_connect_error());
+$host = "localhost";
+$db   = "lab_injection";
+$user = "root";
+$pass = "";
+
+$conn = new mysqli($host, $user, $pass, $db);
+
+if ($conn->connect_error) {
+    die("Erro na conexão: " . $conn->connect_error);
 }
 ?>
