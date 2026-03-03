@@ -1,19 +1,22 @@
 <?php
-include 'conexao.php';
+session_start();
 
-$usuario = $_POST['usuario'];
+$pdo = new PDO("mysql:host=localhost;dbname=lab_injection", "root", "");
+$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+$email = $_POST['email'];
 $senha = $_POST['senha'];
 
-$stmt = $conn->prepare("SELECT * FROM usuarios WHERE usuario = ? AND senha = ?");
-$stmt->bind_param("ss", $usuario, $senha);
+$stmt = $pdo->prepare("SELECT * FROM usuarios WHERE email = :email");
+$stmt->bindParam(":email", $email);
 $stmt->execute();
-$result = $stmt->get_result();
 
-echo "<pre>Consulta segura preparada</pre>"; // Para estudo
+$usuario = $stmt->fetch(PDO::FETCH_ASSOC);
 
-if ($result->fetch_array()) {
-    echo "<p style='color:green'>✅ Logado com segurança!</p>";
+if ($usuario && password_verify($senha, $usuario['senha'])) {
+    $_SESSION['usuario'] = $usuario['email'];
+    header("Location: ../dashboard.php");
 } else {
-    echo "<p style='color:red'>❌ Usuário ou senha inválidos.</p>";
+    echo "Login inválido";
 }
 ?>
